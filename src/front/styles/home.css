@@ -5,3 +5,57 @@
     one more css for each page that will contain the selected used 
     on that page only (the ones not reused in other pages).
 */
+
+.carousel-indicators > button {
+    border-radius: 50%;
+    width: 15px !important;
+    height: 15px !important;
+    background-color: #F2B7C0 !important;  
+    border: 1px solid black !important;
+}
+
+.c-item{
+    height: 800px;
+}
+
+.c-img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.zom-logo{
+    height: 300px;
+    width: 400px;
+    object-fit: contain;
+    padding-top: 20px;
+}
+
+.hells-logo{
+    height: 300px;
+    width: 400px;
+    object-fit: contain;
+}
+
+.jujutsu-logo{
+    height: 300px;
+    width: 400px;
+    object-fit: contain;
+    margin-top: -45px;
+}
+
+.left-caption {
+    left: 0 !important;
+    right: auto !important;
+    height: 100%;
+    padding-left: 50px;
+    width: 500px;
+}
+
+.right-caption {
+    right: 0 !important;
+    left: auto;
+    height: 100%;
+    padding-right: 20px;
+    color: black;
+    width: 450px;
+}
