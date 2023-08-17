@@ -70,7 +70,7 @@
     margin-top: -40px;
 }
 
-button{
+.carousel-item button{
     background-color: #F2B7C0 !important;
     border: none !important;
 }
@@ -94,3 +94,6 @@ button{
     padding-top: 30px;
     color: black;
 }
+
+
+
