@@ -42,20 +42,55 @@
     object-fit: contain;
     margin-top: -45px;
 }
+.carousel-item {
+    position: relative !important;
+}
 
-.left-caption {
-    left: 0 !important;
-    right: auto !important;
-    height: 100%;
-    padding-left: 50px;
-    width: 500px;
+.carousel-caption {
+    position: absolute!important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    padding: 30px
 }
 
 .right-caption {
     right: 0 !important;
-    left: auto;
-    height: 100%;
-    padding-right: 20px;
+    width: 500px !important; /* Set width to 500px */
+    left: auto !important;
+    text-align: start;
+    margin-top: -150px;
+}
+
+.right-caption p{
     color: black;
-    width: 450px;
+    font-size: 20px;
+}
+
+.jujutsu p{
+    margin-top: -40px;
+}
+
+button{
+    background-color: #F2B7C0 !important;
+    border: none !important;
+}
+
+.hells-p p{
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.left-caption {
+    left: 0;
+    right: auto; /* Reset the right value */
+    width: 500px; /* Set width to 500px */
+    text-align: left; /* Align text to the left */
+    margin-top: -160px;
+    font-size: 19px;
+    margin-left: 150px;
+}
+
+.zom p{
+    padding-top: 30px;
+    color: black;
 }
