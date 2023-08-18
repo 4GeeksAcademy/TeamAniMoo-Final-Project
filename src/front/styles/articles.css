@@ -1,0 +1,45 @@
+/* 
+    General Styles used on every website (Don't Repeat Yourself)
+*/
+.container {
+  justify-content: center;
+}
+.cards {
+  padding:5px;
+  background-color: #ffb2bc;
+  max-width: 540px;
+}
+
+.imageGo {
+  width: 100%;
+  height: 200px;
+  border-radius: 2px;
+  object-fit: fill;
+}
+h4 {
+  margin-top: 10px;
+  font-weight: bolder;
+}
+.ArticleSum {
+  text-align: justify;
+  padding: 10px;
+  margin-top: 10px;
+}
+#ReadButton {
+  margin-bottom: 20px;
+  border: none;
+}
+#ReadButton:hover {
+  animation: pulse 1s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
