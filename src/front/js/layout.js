@@ -4,8 +4,9 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
+import { News } from "./pages/news";
+import { Manga } from "./pages/manga";
+import { Anime } from "./pages/anime";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -28,11 +29,11 @@ const Layout = () => {
           <Navbar />
           <Routes>
             <Route element={<Home />} path="/" />
-            <Route element={<Demo />} path="/demo" />
-            <Route element={<Single />} path="/single/:theid" />
+            <Route element={<News />} path="/News" />
+            <Route element={<Manga />} path="/Manga" />
+            <Route element={<Anime />} path="/Anime" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
-          <Articles />
           <Footer />
         </ScrollToTop>
       </BrowserRouter>
