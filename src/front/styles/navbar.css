@@ -1,0 +1,29 @@
+.logo{
+    height: 50px;
+    width: 100px
+}
+
+a:link {
+    text-decoration: none;
+}
+
+
+.h1{
+    font-size: 25px;
+    color: #FADEDC;
+}
+
+.h1:hover{
+    color: white;
+}
+
+.btn{
+    background-color: #F2B7C0;
+    border: none;
+    color: white;
+}
+
+.btn:hover{
+    background-color: #FADEDC;
+
+}
