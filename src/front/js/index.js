@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 //import your own components
 import Layout from "./layout";
+import { GlobalContextProvider } from "./component/global";
 
 //render your react application
-ReactDOM.render(<Layout />, document.querySelector("#app"));
+ReactDOM.render(<GlobalContextProvider><Layout /></GlobalContextProvider>, document.querySelector("#app"));
