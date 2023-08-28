@@ -3,8 +3,19 @@ import React, {createContext, useContext, useReducer} from "react";
 const GlobalContext = createContext();
 const baseUrl = "https://api.jikan.moe/v4";
 
+const LOADING = 'LOADING';
+const SEARCH = 'SEARCH';
+const GET_POPULAR_ANIME = 'GET_POPULAR_ANIME';
+
 const reducer = (state,action) => {
-    return state;
+    switch(action.type){
+        case LOADING:
+            return {...state, loading: true}
+        case GET_POPULAR_ANIME:
+            return {...state, popularAnime: action.payload, loading: false}
+        default:
+            return state;
+    }
 }
 
 export const GlobalContextProvider = ({children}) => {
@@ -22,9 +33,10 @@ export const GlobalContextProvider = ({children}) => {
     const [state,dispatch] = useReducer(reducer,initialState);
 
     const getPopularAnime = async () => {
-        const response = await fetch(`${baseUrl}/anime/16498/news`);
+        dispatch({type: LOADING})
+        const response = await fetch(`${baseUrl}/top/anime?filter=bypopularity`);
         const data = await response.json();
-        console.log(data.data)
+        dispatch({type: GET_POPULAR_ANIME, payload: data.data})
     }
 
     React.useEffect(() => {

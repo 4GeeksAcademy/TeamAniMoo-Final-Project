@@ -4,8 +4,9 @@ import Articles from "../component/articles";
 
 
 
+
 export const Home = () => {
-	
+
 
 	return (
 		<div>
