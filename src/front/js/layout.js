@@ -7,11 +7,14 @@ import { Home } from "./pages/home";
 import { News } from "./pages/news";
 import { Manga } from "./pages/manga";
 import { Anime } from "./pages/anime";
+import { Login } from "./pages/login";
+import { Signup } from "./pages/signup";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import Articles from "./component/articles";
+
 
 //create your first component
 const Layout = () => {
@@ -32,6 +35,8 @@ const Layout = () => {
             <Route element={<News />} path="/News" />
             <Route element={<Manga />} path="/Manga" />
             <Route element={<Anime />} path="/Anime" />
+            <Route element={<Login />} path="/Login"/>
+            <Route element={<Signup/>} path="/Signup"/>
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />
