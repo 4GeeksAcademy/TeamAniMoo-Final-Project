@@ -1,0 +1,33 @@
+.card{
+    width:50%;
+    float:none;
+    margin: 0 auto;
+    margin-top:50px;
+    margin-bottom:50px;
+    background-color: #f2b7c0;
+    color:#ffffff;
+    border:none;
+}
+.card-header{
+    border:none;
+    background-color: #f2b7c0;
+}
+.loGo{
+    width:150px;
+    height:40px;
+}
+.signup-btn{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px 24px;
+    width: 100%;
+    border:none;
+}
+.signup-btn:hover{
+    background-color: #fadedc;
+}
+#register{
+    padding:10px;
+}
