@@ -6,7 +6,7 @@ export const AnimeItem = () => {
     const [anime,setAnime] = useState([]);
     const [characters, setCharacters] = useState([]);
 
-    const {title,synopsis,trailer,duration,aired,season,images,rank,rating,status,episodes,genres} = anime
+    const {title,synopsis,trailer,duration,aired,season,images,rank,rating,status,episodes} = anime
    
 
     const getAnime = async (anime) => {
@@ -33,7 +33,19 @@ export const AnimeItem = () => {
 
     
     return(
-        <div>
+        <div>   
+            
+            <div>
+                {trailer?.embed_url && <iframe
+                    src={trailer?.embed_url}
+                    title="Inline Frame Example"
+                    width="800"
+                    height="450"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen>
+                </iframe>}
+            </div>
+
             <h1>{title}</h1>
             <div>
                 <img src={images?.jpg.large_image_url} alt=""/>
@@ -47,16 +59,6 @@ export const AnimeItem = () => {
             <p>Episodes: {episodes}</p>
             <p>{duration}</p>
 
-            <div>
-                {trailer?.embed_url && <iframe
-                    src={trailer?.embed_url}
-                    title="Inline Frame Example"
-                    width="800"
-                    height="450"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen>
-                </iframe>}
-            </div>
 
             <div className="characters">
                 {characters?.map((character)=>{
