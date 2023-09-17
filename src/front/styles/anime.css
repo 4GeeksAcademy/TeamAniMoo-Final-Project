@@ -1,0 +1,19 @@
+.card.anime-card{
+    width: 300px;
+    height:500px;
+}
+
+.anime-card-img-top{
+    height: 430px;
+    object-fit: cover;
+}
+
+
+
+.anime-card-title{
+    text-align: center;
+}
+
+.container.popular-anime{
+    padding-bottom: 150px;
+}

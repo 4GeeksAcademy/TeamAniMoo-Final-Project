@@ -33,7 +33,7 @@ export const AnimeItem = () => {
 
     
     return(
-        <div>   
+        <div className="container">   
             
             <div>
                 {trailer?.embed_url && <iframe

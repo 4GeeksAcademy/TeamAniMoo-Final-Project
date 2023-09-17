@@ -7,7 +7,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     favorites_column = db.relationship("Favorites", backref = "user")
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(80), unique=False, nullable=False)
+    password = db.Column(db.String(200), unique=False, nullable=False)
     first_name = db.Column(db.String(80),  nullable=False)
     last_name = db.Column(db.String(80),  nullable=False)
 

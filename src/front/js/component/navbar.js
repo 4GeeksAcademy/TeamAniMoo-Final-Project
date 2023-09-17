@@ -14,9 +14,6 @@ export const Navbar = () => {
 					</Link>
 				</div>
 				<div>
-					<Link to="/news">
-						<span className="navbar-brand mb-0 h1">News</span>
-					</Link>
 					<Link to="/manga">
 						<span className="navbar-brand mb-0 h1">Manga</span>
 					</Link>	
@@ -25,9 +22,9 @@ export const Navbar = () => {
 					</Link>
 				</div>
 				<div className="ml-auto">
-					<Link to="/login">
-						<button className="btn">Login</button>
-					</Link>
+						<Link to="/login">
+							<button className="btn">Login</button>
+						</Link>
 				</div>
 			</div>
 		</nav>

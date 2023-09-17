@@ -13,13 +13,41 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			user: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+
+			 login: async(email,password) => {
+		
+				const opts = {
+				  method: "POST",
+				  headers: {
+					"Content-Type": "application/json"
+				  },
+				  body: JSON.stringify({
+					"email": email,
+					"password": password
+				  })
+				}
+
+				try {
+					const resp = await fetch("https://automatic-dollop-465jj7w657j3jqqv-3001.app.github.dev/api/token", opts)
+						let data = await resp.json()
+						console.log(data?.access_token)
+						localStorage.setItem("user", data.access_token)
+						setStore({user: data.access_token})
+						return true
+					}
+				catch(error) {
+				  console.error("There was an error!",error)
+				}
+			  },
+			
 
 			getMessage: async () => {
 				try{

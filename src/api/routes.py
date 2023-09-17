@@ -1,18 +1,49 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
+import os
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
+from flask_jwt_extended import create_access_token
+from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import jwt_required
+from werkzeug.security import generate_password_hash, check_password_hash
+
+
 
 api = Blueprint('api', __name__)
+@api.route('/user', methods =['GET'])
+def get_users(): 
+     users = User.query.all()
+     all_users =  list(map(lambda x: x.serialize(), users))
+
+     return jsonify(all_users)
 
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
+@api.route('/user', methods =['POST'])
+def create_users(): 
 
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
+    request_body_user = request.get_json()
 
-    return jsonify(response_body), 200
+    user1 = User(email=request_body_user['email'],password=generate_password_hash(request_body_user['password']),first_name=request_body_user['first_name'], last_name=request_body_user['last_name'])
+    db.session.add(user1)
+    db.session.commit()
+
+    return jsonify(request_body_user)
+
+
+
+
+
+
+@api.route('/token', methods=['POST']) 
+def create_token():
+        email = request.json.get("email", None)
+        password = request.json.get("password", None)
+        user = User.query.filter_by(email=email).first()
+        if not user or not check_password_hash(user.password,password):
+            return jsonify({"msg": "Bad username or password"}), 401
+
+        access_token = create_access_token(identity=email)
+        return jsonify(access_token=access_token)

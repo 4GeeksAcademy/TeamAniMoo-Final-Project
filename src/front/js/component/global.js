@@ -6,6 +6,8 @@ const baseUrl = "https://api.jikan.moe/v4";
 const LOADING = 'LOADING';
 const SEARCH = 'SEARCH';
 const GET_POPULAR_ANIME = 'GET_POPULAR_ANIME';
+const GET_UPCOMMING_ANIME = 'GET_UPCOMMING_ANIME';
+const GET_AIRING_ANIME = 'GET_AIRING_ANIME';
 
 const reducer = (state,action) => {
     switch(action.type){
@@ -24,7 +26,6 @@ export const GlobalContextProvider = ({children}) => {
         popularAnime: [],
         upcomingAnime: [],
         airingAnime: [],
-        pictures: [],
         isSearch: false,
         searchResults: [],
         loading: false,

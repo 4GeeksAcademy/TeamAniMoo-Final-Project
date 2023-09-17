@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Context } from "../store/appContext"
 import { Link } from "react-router-dom";
 import loGo from "../../img/Logo1.png";
 import "../../styles/login.css";
 
 export const Login = () => {
+  const {store, actions } = useContext(Context)
+  const [email, setEmail ] = useState("")
+  const [password, setPassword] = useState("")
+
+  const handleClick = ()=>{
+    actions.login(email,password);
+  }
+
   return (
     <div className="container">
       <div className="card">
@@ -18,6 +27,8 @@ export const Login = () => {
               type="email"
               className="form-control"
               placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="form-outline mb-4">
@@ -25,6 +36,8 @@ export const Login = () => {
               type="password"
               className="form-control"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="row mb-4 g-5">
@@ -44,7 +57,7 @@ export const Login = () => {
               <a href="#">Forgot Password?</a>
             </div>
           </div>
-          <button type="button" className="signin-btn">
+          <button type="button" className="signin-btn" onClick={handleClick}>
             {" "}
             Sign In
           </button>
