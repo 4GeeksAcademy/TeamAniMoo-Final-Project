@@ -21,16 +21,22 @@ def get_users():
      return jsonify(all_users)
 
 
-@api.route('/user', methods =['POST'])
+@api.route('/signup', methods =['POST'])
 def create_users(): 
 
     request_body_user = request.get_json()
 
-    user1 = User(email=request_body_user['email'],password=generate_password_hash(request_body_user['password']),first_name=request_body_user['first_name'], last_name=request_body_user['last_name'])
+    user1 = User(email=request_body_user['email'],
+                 password=generate_password_hash(request_body_user['password']),
+                 first_name=request_body_user['firstname'], 
+                 last_name=request_body_user['lastname'])
     db.session.add(user1)
     db.session.commit()
+    email = request.json.get('email', None)
+    access_token = create_access_token(identity=email)
 
-    return jsonify(request_body_user)
+    return jsonify(request_body_user, access_token)
+
 
 
 
@@ -47,3 +53,5 @@ def create_token():
 
         access_token = create_access_token(identity=email)
         return jsonify(access_token=access_token)
+
+

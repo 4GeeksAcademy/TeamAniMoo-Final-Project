@@ -4,7 +4,6 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
-import { News } from "./pages/news";
 import { Manga } from "./pages/manga";
 import { Anime } from "./pages/anime";
 import { Login } from "./pages/login";
@@ -33,7 +32,6 @@ const Layout = () => {
           <Navbar />
           <Routes>
             <Route element={<Home />} path="/" />
-            <Route element={<News />} path="/News" />
             <Route element={<Manga />} path="/Manga" />
             <Route element={<Anime />} path="/Anime" />
             <Route element= {<AnimeItem />} path="/anime/:id"/>

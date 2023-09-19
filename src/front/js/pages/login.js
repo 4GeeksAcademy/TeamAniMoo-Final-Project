@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loGo from "../../img/Logo1.png";
 import "../../styles/login.css";
 
@@ -8,7 +8,12 @@ export const Login = () => {
   const {store, actions } = useContext(Context)
   const [email, setEmail ] = useState("")
   const [password, setPassword] = useState("")
-
+  let navigate = useNavigate();
+  useEffect(()=>{
+    if(store.token !== null && store.token != undefined && store.token != ''){
+      navigate('/anime')
+    }
+  },[store.token])
   const handleClick = ()=>{
     actions.login(email,password);
   }
