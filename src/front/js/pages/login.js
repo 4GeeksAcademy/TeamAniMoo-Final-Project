@@ -1,22 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Context } from "../store/appContext"
+import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import loGo from "../../img/Logo1.png";
 import "../../styles/login.css";
 
 export const Login = () => {
-  const {store, actions } = useContext(Context)
-  const [email, setEmail ] = useState("")
-  const [password, setPassword] = useState("")
+  const { store, actions } = useContext(Context);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   let navigate = useNavigate();
-  useEffect(()=>{
-    if(store.token !== null && store.token != undefined && store.token != ''){
-      navigate('/anime')
+
+  useEffect(() => {
+    if (store.token !== null && store.token != undefined && store.token != "") {
+      navigate("/anime");
     }
-  },[store.token])
-  const handleClick = ()=>{
-    actions.login(email,password);
-  }
+  }, [store.token]);
+
+  const handleClick = () => {
+    actions.login(email, password);
+  };
 
   return (
     <div className="container">
@@ -48,12 +50,12 @@ export const Login = () => {
           <div className="row mb-4 g-5">
             <div className="col d-flex justify-content-center">
               <input
-                class="form-check-input"
+                className="form-check-input"
                 type="checkbox"
                 value=""
                 id="form1"
               />
-              <label className="form-check-label" for="form1">
+              <label className="form-check-label" htmlFor="form1">
                 {" "}
                 Remember Me
               </label>
@@ -70,15 +72,15 @@ export const Login = () => {
             <p>or Sign In with:</p>
             <div className="link-btns">
               <button type="button" className="btn btn-link btn floating mx-1">
-                <i class="bi bi-twitter"></i>
+                <i className="bi bi-twitter"></i>
               </button>
 
               <button type="button" className="btn btn-link btn floating mx-1">
-                <i class="bi bi-google"></i>
+                <i className="bi bi-google"></i>
               </button>
 
               <button type="button" className="btn btn-link btn floating mx-1">
-                <i class="bi bi-github"></i>
+                <i className="bi bi-github"></i>
               </button>
             </div>
           </div>

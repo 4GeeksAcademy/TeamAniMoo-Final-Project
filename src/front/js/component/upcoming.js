@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 
 
-export const Popular = ({rendered}) => {
-    const {popularAnime,isSearch,searchResults} = useGlobalContext()
+export const Upcoming = ({rendered}) => {
+    const {upcomingAnime,isSearch,searchResults} = useGlobalContext()
 
     const conditonalRender = () => {
-        if(!isSearch && rendered === 'popular'){
-            return popularAnime.map((anime)=>{
+        if(!isSearch && rendered === 'upcoming'){
+            return upcomingAnime.map((anime)=>{
                 return <Link to= {`/anime/${anime.mal_id}`} key={anime.mal_id}>
                     <div className="card anime-card">
                         <img className="card-img-top anime-card-img-top" src={anime.images.jpg.image_url}/>
