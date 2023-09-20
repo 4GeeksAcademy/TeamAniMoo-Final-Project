@@ -1,0 +1,31 @@
+.welcome-card{
+    width: 100% !important;
+    margin-bottom: 200px !important;
+}
+.welcome-card-body{
+    float: right !important;
+}
+
+.welcome-logo-img{
+    width: 200px;
+}
+
+.welcome-title{
+    font-size: 49.5px;
+    text-align: center;
+}
+
+.welcome-card{
+    height: 600px;
+}
+
+.welcome-logo-girl{
+    object-fit: cover;
+    height: 600px;
+    padding-left:40px;
+}
+
+.welcome-card-text{
+    font-size: 20px;
+}
+

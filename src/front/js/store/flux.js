@@ -68,9 +68,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 					const resp = await fetch("https://automatic-dollop-465jj7w657j3jqqv-3001.app.github.dev/api/signup", opts)
 						let data = await resp.json()
-						console.log(data?.access_token)
+						console.log(data)
 						localStorage.setItem("user", data[1])
 						setStore({user: data[0]})
+						window.location.href = "https://automatic-dollop-465jj7w657j3jqqv-3000.app.github.dev/login"
 						return true
 					}
 				catch(error) {

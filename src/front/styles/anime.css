@@ -17,3 +17,79 @@
 .container.popular-anime{
     padding-bottom: 150px;
 }
+
+.rendered-text{
+    text-align: center;
+    margin:1rem;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    letter-spacing: 3px;
+    font-size: 49px;
+}
+
+.search-container{
+    text-align: center;
+    justify-content:center;
+    padding-top: 30px;
+}
+
+.filter-btn{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.input-control{
+    height: 35px;
+}
+
+.input{
+    justify-content: center;
+}
+
+.card-img-top.anime-card-img-top.anime-character-img{
+    object-fit: fill;
+    width: 300px;
+    position: relative;
+    left: -12px;
+}
+
+
+.anime-info{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#trailer{
+    width: 100%;
+}
+.anime-info-title{
+    text-align: center;
+    margin:1rem;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    letter-spacing: 3px;
+}
+
+.character-title{
+    text-align: center;
+    margin:1rem;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    letter-spacing: 3px;
+    font-size: 49px;
+}
+
+.underconstruction{
+    width: 100%;
+    padding-top: 180px;
+}
+
+.underconstruction-title{
+    text-align: center;
+    margin:1rem;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    letter-spacing: 3px;
+    font-size: 49px;
+}

@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 import { useGlobalContext } from "../component/global";
 import { Airing } from "../component/airing";
 import { Upcoming } from "../component/upcoming";
+import { Welcome } from "../component/welcome";
 
 
 
@@ -38,9 +39,9 @@ export const Anime = () => {
 				
 	
 		<div className="container">
-			{!store.token?(
-				<div>you must log in to see this page</div>
-			):(
+			{!store.token?( 
+				   <Welcome/>  
+			   ):(   
 				<div>
 									<header className="row rendered">
 					<h1 className="rendered-text">
@@ -57,8 +58,8 @@ export const Anime = () => {
 							</div>
 							<form action='' className="search-form" onSubmit={handleSubmit}>
 								<div className="input-control">
-									<input type="text" placeholder="Search Anime" value={search} onChange={handleChange}></input>
-									<button className= "btn"type="submit">Search</button>
+									<input className= "input"type="text" placeholder="Search Anime" value={search} onChange={handleChange}></input>
+									<button className= "btn filter-btn"type="submit">Search</button>
 								</div>
 							</form>
 							<div className="filter-btn airing-filter" >
@@ -78,7 +79,7 @@ export const Anime = () => {
 				</header>
 				{switchComponent()}
 				</div>
-			)}
+			   )}   
 		</div>
 
 		</div>

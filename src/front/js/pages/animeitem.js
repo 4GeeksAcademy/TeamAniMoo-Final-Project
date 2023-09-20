@@ -36,42 +36,50 @@ export const AnimeItem = () => {
         <div className="container">   
             
             <div>
-                {trailer?.embed_url && <iframe
+                {trailer?.embed_url && <iframe id="trailer"
                     src={trailer?.embed_url}
                     title="Inline Frame Example"
-                    width="800"
+                    width="1296"
                     height="450"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen>
                 </iframe>}
             </div>
 
-            <h1>{title}</h1>
-            <div>
+            <h1 className="anime-info-title">{title}</h1>
+            <div className="anime-info">
                 <img src={images?.jpg.large_image_url} alt=""/>
+                <div>
+                    <p>{synopsis}</p>
+                    <p>Aired: {aired?.string}</p>
+                    <p>Rating: {rating}</p>
+                    <p>Rank: {rank}</p>
+                    <p>Seasons: {season}</p>
+                    <p>Status: {status}</p>
+                    <p>Episodes: {episodes}</p>
+                    <p>{duration}</p>
+                </div>
             </div>
-            <p>{synopsis}</p>
-            <p>Aired: {aired?.string}</p>
-            <p>Rating: {rating}</p>
-            <p>Rank: {rank}</p>
-            <p>Seasons: {season}</p>
-            <p>Status: {status}</p>
-            <p>Episodes: {episodes}</p>
-            <p>{duration}</p>
+            <div className="Character-container">
 
-
-            <div className="characters">
+            <h5 className="character-title">Characters</h5>
+            <div className="container popular-anime row row-cols-4">
+    
                 {characters?.map((character)=>{
                     const {role} = character
                     const {images, name} = character.character
                     return(
-                        <div className="character">
-                            <img src={images?.jpg.image_url} alt=""/>
-                            <p>{name}</p>
-                            <p>{role}</p>
+                        <div className="card anime-card">
+                            
+                                <img  className= "card-img-top anime-card-img-top anime-character-img"src={images?.jpg.image_url} alt=""/>
+                                <div className="card-body anime-card-body">
+                                <h5 className=" card-title anime-card-title">{name}</h5>
+                                <p className="card-title anime-card-title">{role}</p>
+                                </div>
                         </div>
                     )
                 })}   
+            </div>
             </div>
 
 

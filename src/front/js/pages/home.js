@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel } from "../component/carousel";
-import Articles from "../component/articles";
+import { Welcome } from "../component/welcome";
+
 
 
 
@@ -11,7 +12,7 @@ export const Home = () => {
 	return (
 		<div>
 			<Carousel/>
-			<Articles/>
+			<Welcome/>
 		</div>
 	);
 };
